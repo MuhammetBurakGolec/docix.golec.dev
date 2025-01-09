@@ -1,0 +1,113 @@
+{
+  "posts": [
+    {
+      "comment": "WOW",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "content": "İkinci gönderi",
+      "likes": 10,
+      "comments": []
+    },
+    {
+      "id": "3",
+      "content": "Üçüncü gönderi",
+      "likes": 8,
+      "comments": []
+    },
+    {
+      "id": "4",
+      "content": "Dördüncü gönderi",
+      "likes": 15,
+      "comments": []
+    },
+    {
+      "id": "5",
+      "content": "Beşinci gönderi",
+      "likes": 8,
+      "comments": []
+    },
+    {
+      "id": "7e99",
+      "title": "test",
+      "content": "test",
+      "tags": [
+        "test",
+        "sad"
+      ],
+      "likes": 23,
+      "comments": []
+    }
+  ],
+  "containers": [
+    {
+      "Id": "3abcc39c8ca14fdf4e5fc2c018c276fd8ecdb71962f6bdc594cd13bd11a8663a",
+      "Names": [
+        "/grafana"
+      ],
+      "Image": "grafana/grafana",
+      "ImageID": "sha256:8c7e4042cd999b918ea441f3134b59929d81f58167b11c5158a0c863ae082c65",
+      "Command": "/run.sh",
+      "Created": 1732605443,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 3000,
+          "PublicPort": 3100,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "e8dde8bc8d0eab646a6c3a24eb946d123275616e7b238c07242d03d7355b2ad5",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "",
+        "com.docker.compose.image": "sha256:8c7e4042cd999b918ea441f3134b59929d81f58167b11c5158a0c863ae082c65",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "grafana",
+        "com.docker.compose.project.config_files": "/root/docker/grafana/docker-compose.yml",
+        "com.docker.compose.project.working_dir": "/root/docker/grafana",
+        "com.docker.compose.service": "grafana",
+        "com.docker.compose.version": "2.29.7",
+        "maintainer": "Grafana Labs <hello@grafana.com>"
+      },
+      "State": "running",
+      "Status": "Up 2 minutes",
+      "HostConfig": {
+        "NetworkMode": "grafana_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "grafana_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "MacAddress": "02:42:ac:1c:00:02",
+            "DriverOpts": null,
+            "NetworkID": "7d9e4e2383179e9f27d95709d55742e23991c38f67f86afa2724b3d525aea293",
+            "EndpointID": "187ed85239e39c78933df5a85e200dfb21d0f16de1c203f71ef5bf4097724460",
+            "Gateway": "172.28.0.1",
+            "IPAddress": "172.28.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "DNSNames": null
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "grafana_grafana-storage",
+          "Source": "/var/lib/docker/volumes/grafana_grafana-storage/_data",
+          "Destination": "/var/lib/grafana",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    }
+  ]
+}

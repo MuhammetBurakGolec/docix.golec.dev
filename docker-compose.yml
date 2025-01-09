@@ -1,0 +1,29 @@
+services:
+  mock-service:
+    image: mock-service
+    build:
+      context: ./microservices/mockdata-api/
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+  
+  ssh-service:
+    image: ssh-service
+    build:
+      context: ./microservices/ssh-services/
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8084"
+
+  frontend-service:
+    image: frontend-service
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - mock-service
+      - ssh-service

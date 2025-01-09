@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "title": "Docker",
+    "subsections": [
+      {
+        "id": 1,
+        "title": "Kurulum",
+        "slug": "docker-kurulum",
+        "content": "<p>Docker, uygulama konteynerlerini çalıştırmak ve yönetmek için kullanılan bir platformdur. Aşağıdaki adımlarla Docker'ı sisteminize kurabilirsiniz:</p><ul><li><strong>İhtiyaçların Kontrolü:</strong> Docker, Linux, Windows ve macOS üzerinde çalışabilir. Docker'ı kurmadan önce sisteminizin gerekli gereksinimlere sahip olduğundan emin olun.</li><li><strong>Docker İndirme:</strong> Docker'ı resmi web sitesinden indirin ve uygun platforma göre kurulum dosyasını seçin.</li><li><strong>Kurulumun Başlatılması:</strong> Docker'ı yüklemek için kurulum sihirbazını başlatın ve adımları takip edin.</li><li><strong>Yapılandırma:</strong> Kurulum tamamlandığında Docker'ı başlatın ve gerekirse yapılandırma dosyalarını düzenleyin. Docker servisinin doğru çalıştığından emin olun.</li><li><strong>Kurulumun Tamamlanması:</strong> Kurulum işlemi başarıyla tamamlandığında Docker komutlarını kullanarak konteyner yönetimine başlayabilirsiniz.</li></ul>"
+      },
+      {
+        "id": 2,
+        "title": "Docker Yönetimi",
+        "slug": "docker-yonetimi",
+        "content": "<p>Docker yönetimi, konteynerlerin oluşturulması, yönetilmesi ve izlenmesi için kullanılan araçları içerir:</p><ul><li><strong>Konteyner Oluşturma:</strong> Docker ile konteynerler oluşturabilir, uygulamalarınızı her ortamda aynı şekilde çalışacak şekilde paketleyebilirsiniz.</li><li><strong>Konteyner Yönetimi:</strong> Konteynerlerinizi başlatabilir, durdurabilir, yeniden başlatabilir ve silebilirsiniz.</li><li><strong>Konteyner İzleme:</strong> Docker konteynerlerinizin performansını gerçek zamanlı olarak izleyebilir ve logları görüntüleyebilirsiniz.</li></ul>"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Nginx",
+    "subsections": [
+      {
+        "id": 1,
+        "title": "Kurulum",
+        "slug": "nginx-kurulum",
+        "content": "<p>Nginx, yüksek performanslı bir web sunucusu ve ters proxy sunucusudur. Nginx'i kurmak için şu adımları takip edebilirsiniz:</p><ul><li><strong>İhtiyaçların Kontrolü:</strong> Nginx, çoğu Linux dağıtımında yerleşik olarak mevcuttur, ancak Windows için de manuel kurulum yapılabilir.</li><li><strong>Yazılımın İndirilmesi:</strong> Nginx'i resmi web sitesinden veya sistem paket yöneticisinden indirip yükleyebilirsiniz.</li><li><strong>Kurulumun Başlatılması:</strong> Nginx kurulumunu başlatın ve sisteminizin uygun paket yöneticisi ile yüklemeyi tamamlayın.</li><li><strong>Yapılandırma:</strong> Nginx yapılandırma dosyasını (nginx.conf) gereksinimlerinize göre düzenleyin.</li><li><strong>Kurulumun Tamamlanması:</strong> Kurulum tamamlandıktan sonra Nginx servisini başlatın ve test edin.</li></ul>"
+      },
+      {
+        "id": 2,
+        "title": "Ters Proxy Konfigürasyonu",
+        "slug": "nginx-ters-proxy",
+        "content": "<p>Nginx'i ters proxy olarak kullanarak, gelen HTTP isteklerini başka bir sunucuya yönlendirebilirsiniz. Aşağıdaki adımlarla ters proxy yapılandırmasını gerçekleştirebilirsiniz:</p><ul><li><strong>Reverse Proxy Yapılandırması:</strong> Nginx yapılandırma dosyasına gerekli proxy ayarlarını ekleyin, örneğin:</li><pre><code>location / { proxy_pass http://backend_server; }</code></pre><li><strong>Test ve Başlatma:</strong> Yapılandırma dosyasını kaydedin ve Nginx'i yeniden başlatın. Proxy geçişini test ederek düzgün çalışıp çalışmadığını kontrol edin.</li></ul>"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Kubernetes",
+    "subsections": [
+      {
+        "id": 1,
+        "title": "Kurulum",
+        "slug": "kubernetes-kurulum",
+        "content": "<p>Kubernetes, konteynerlerin yönetimi için kullanılan açık kaynaklı bir platformdur. Kubernetes'i kurmak için aşağıdaki adımları izleyebilirsiniz:</p><ul><li><strong>İhtiyaçların Kontrolü:</strong> Kubernetes, çoklu sunucular üzerinde çalışmak için tasarlanmıştır. Birden fazla düğüm ve bir kontrol düzlemi gereklidir.</li><li><strong>Yazılımın İndirilmesi:</strong> Kubernetes'i sisteminizin uygun paket yöneticisi veya Docker aracılığıyla indirebilirsiniz.</li><li><strong>Kurulumun Başlatılması:</strong> Kubernetes'i kurmak için kubeadm, kubectl ve kubelet gibi araçları yükleyin.</li><li><strong>Yapılandırma ve Yönetim:</strong> Kubernetes'i kullanmaya başlamak için kubectl komutlarını kullanarak yapılandırma ve yönetim işlemlerini gerçekleştirin.</li><li><strong>Kurulumun Tamamlanması:</strong> Kubernetes kurulumu tamamlandığında, küme yönetimi ve konteyner dağıtımı yapabilirsiniz.</li></ul>"
+      },
+      {
+        "id": 2,
+        "title": "Kubernetes Yönetimi",
+        "slug": "kubernetes-yonetimi",
+        "content": "<p>Kubernetes, pod'lar, servisler, replikasyonlar gibi birimleri yönetir. Bu birimler arasında verimli bir dağıtım için aşağıdaki özellikleri kullanabilirsiniz:</p><ul><li><strong>Pod Yönetimi:</strong> Pod'lar, Kubernetes'teki temel dağıtım birimleridir. Pod'larınızı başlatabilir, durdurabilir ve yeniden başlatabilirsiniz.</li><li><strong>Servis Yönetimi:</strong> Uygulamanızın farklı parçalarını birbirine bağlayan servisleri oluşturabilir ve yönetebilirsiniz.</li><li><strong>Dağıtım Yönetimi:</strong> Uygulamalarınızı farklı küme düğümlerine otomatik olarak dağıtabilir ve ölçeklendirme işlemleri gerçekleştirebilirsiniz.</li></ul>"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "MinIO",
+    "subsections": [
+      {
+        "id": 1,
+        "title": "Kurulum",
+        "slug": "minio-kurulum",
+        "content": "<p>MinIO, yüksek performanslı bir nesne depolama sistemidir. MinIO'yu kurmak için şu adımları takip edebilirsiniz:</p><ul><li><strong>İhtiyaçların Kontrolü:</strong> MinIO, Docker, Linux ve macOS üzerinde çalışabilir.</li><li><strong>Yazılımın İndirilmesi:</strong> MinIO'yu resmi web sitesinden indirip uygun işletim sistemine kurun.</li><li><strong>Kurulumun Başlatılması:</strong> MinIO'yu kurduktan sonra, terminal üzerinden başlatın.</li><li><strong>Yapılandırma:</strong> MinIO'yu yapılandırmak için gerekli çevresel değişkenleri ve parametreleri ayarlayın.</li><li><strong>Kurulumun Tamamlanması:</strong> MinIO kurulum ve yapılandırma işlemleri tamamlandığında, depolama sisteminizi kullanmaya başlayabilirsiniz.</li></ul>"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Harbor",
+    "subsections": [
+      {
+        "id": 1,
+        "title": "Kurulum",
+        "slug": "harbor-kurulum",
+        "content": "<p>Harbor, konteyner görüntülerini güvenli bir şekilde depolamak ve yönetmek için kullanılan açık kaynaklı bir konteyner kayıt deposudur. Harbor kurulumu için aşağıdaki adımları takip edebilirsiniz:</p><ul><li><strong>Yazılımın İndirilmesi:</strong> Harbor'ın en son sürümünü resmi web sitesinden indirin ve uygun dizine yerleştirin.</li><li><strong>Docker ile Kurulum:</strong> Harbor'ı Docker Compose kullanarak kurabilirsiniz.</li><li><strong>Yapılandırma:</strong> Harbor yapılandırma dosyasını düzenleyerek gerekli ayarları yapın.</li><li><strong>Kurulumun Tamamlanması:</strong> Harbor'ı başlatarak konteynerlerinizi güvenli bir şekilde depolamaya başlayabilirsiniz.</li></ul>"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Grafana",
+    "subsections": [
+      {
+        "id": 1,
+        "title": "Kurulum",
+        "slug": "grafana-kurulum",
+        "content": "<p>Grafana, zaman serisi verilerini görselleştirmek için kullanılan açık kaynaklı bir analiz platformudur. Grafana'yı kurmak için şu adımları takip edebilirsiniz:</p><ul><li><strong>İhtiyaçların Kontrolü:</strong> Grafana, Linux, macOS ve Windows üzerinde çalışabilir.</li><li><strong>Yazılımın İndirilmesi:</strong> Grafana'yı resmi web sitesinden veya paket yöneticisi ile indirip kurabilirsiniz.</li><li><strong>Kurulumun Başlatılması:</strong> Kurulum dosyasını çalıştırarak Grafana'yı başlatın.</li><li><strong>Yapılandırma:</strong> Grafana'nın yapılandırma dosyasını düzenleyerek metrik kaynaklarını ve panoları yapılandırın.</li><li><strong>Kurulumun Tamamlanması:</strong> Grafana kurulum işlemi tamamlandığında, metrikleri görselleştirmeye başlayabilirsiniz.</li></ul>"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Prometheus",
+    "subsections": [
+      {
+        "id": 1,
+        "title": "Kurulum",
+        "slug": "prometheus-kurulum",
+        "content": "<p>Prometheus, zaman serisi verilerini toplamak ve sorgulamak için kullanılan açık kaynaklı bir sistem izleme ve alarm aracıdır. Prometheus kurulumu için şu adımları izleyebilirsiniz:</p><ul><li><strong>İhtiyaçların Kontrolü:</strong> Prometheus, çoğu Linux dağıtımında çalışabilir ve Docker ile de kullanılabilir.</li><li><strong>Yazılımın İndirilmesi:</strong> Prometheus'u resmi web sitesinden indirip uygun dizine yerleştirin.</li><li><strong>Kurulumun Başlatılması:</strong> Prometheus'u başlatın ve yapılandırma dosyasını düzenleyin.</li><li><strong>Yapılandırma:</strong> Prometheus yapılandırma dosyasına hedef sistemleri ekleyin ve izleme işlemlerine başlayın.</li><li><strong>Kurulumun Tamamlanması:</strong> Kurulum tamamlandığında, Prometheus üzerinden metrikleri izlemeye başlayabilirsiniz.</li></ul>"
+      }
+    ]
+  }
+]

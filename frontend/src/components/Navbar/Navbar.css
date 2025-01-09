@@ -1,0 +1,80 @@
+.navbar {
+    background: var(--background-navbar);
+    color: var(--background-white);
+    padding: var(--spacing-md) var(--spacing-xl);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-brand {
+    text-decoration: none;
+    color: var(--background-navbar);
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: var(--transition);
+    background: var(--background-light);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 25px;
+  }
+  
+  .navbar-brand:hover {
+    color: var(--background-dark);
+    background: var(--status-success);
+    transform: translateY(-2px);
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: var(--spacing-lg);
+    background: var(--background-light);
+    padding: var(--spacing-xs);
+    border-radius: 30px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: var(--background-dark);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 20px;
+    transition: var(--transition);
+    font-weight: 500;
+  }
+  
+  .nav-link:first-child {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  
+  .nav-link:last-child {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-left: -1px;
+  }
+  
+  .nav-link:hover {
+    color: var(--background-dark);
+    background: var(--status-success);
+  } 
+  
+  .navbar-brand a,
+  .nav-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-brand a:hover,
+  .nav-links a:hover {
+    color: #0056b3;
+  }

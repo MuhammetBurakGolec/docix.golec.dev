@@ -1,0 +1,90 @@
+.add-post-container {
+    background: var(--background-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    max-width: 800px;
+    margin: 100px auto;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .add-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  
+  .post-title-input,
+  .post-tags-input,
+  .post-textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid #e0e0e0;
+    border-radius: var(--radius-md);
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .post-title-input:focus,
+  .post-tags-input:focus,
+  .post-textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  .post-textarea {
+    min-height: 200px;
+    resize: vertical;
+  }
+  
+  .post-button {
+    padding: var(--spacing-md);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .post-button:not(:disabled):hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  .post-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .add-post-container {
+      margin: 20px;
+      padding: var(--spacing-lg);
+    }
+    
+    .post-textarea {
+      min-height: 150px;
+    }
+  } 
