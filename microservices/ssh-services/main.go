@@ -11,7 +11,6 @@ import (
 	"github.com/gorilla/websocket"
 )
 
-// WebSocket upgrader
 var upgrader = websocket.Upgrader{
 	CheckOrigin: func(r *http.Request) bool {
 		return true
@@ -19,7 +18,6 @@ var upgrader = websocket.Upgrader{
 }
 
 func handleWebSocket(w http.ResponseWriter, r *http.Request) {
-	// Upgrade HTTP connection to WebSocket
 	ws, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Println("Upgrade Error:", err)
@@ -27,17 +25,14 @@ func handleWebSocket(w http.ResponseWriter, r *http.Request) {
 	}
 	defer ws.Close()
 
-	// Get container ID from query parameter
 	containerId := r.URL.Query().Get("containerId")
 	if containerId == "" {
 		log.Println("Container ID not provided")
 		return
 	}
 
-	// Create command
 	cmd := exec.Command("/bin/bash")
 
-	// Create PTY
 	ptmx, err := pty.Start(cmd)
 	if err != nil {
 		log.Println("PTY Start Error:", err)
@@ -48,26 +43,27 @@ func handleWebSocket(w http.ResponseWriter, r *http.Request) {
 		cmd.Process.Kill()
 	}()
 
-	// Connect to server and enter container
 	sshCommand := "ssh root@86.48.6.99\n"
 	dockerExecCommand := fmt.Sprintf("docker exec -it %s sh\n", containerId)
+	commandClearAndHello := fmt.Sprintf("clear && echo '%s Container`inin içindesiniz'\n", containerId)
 
-	// Execute SSH command
 	if _, err = ptmx.Write([]byte(sshCommand)); err != nil {
 		log.Println("SSH Command Write Error:", err)
 		return
 	}
 
-	// Wait for SSH connection
 	time.Sleep(2 * time.Second)
 
-	// Execute docker exec command
 	if _, err = ptmx.Write([]byte(dockerExecCommand)); err != nil {
 		log.Println("Docker Exec Command Write Error:", err)
 		return
 	}
 
-	// Read from PTY and send to WebSocket
+	if _, err = ptmx.Write([]byte(commandClearAndHello)); err != nil {
+		log.Println("Docker Exec Command Write Error:", err)
+		return
+	}
+
 	go func() {
 		buf := make([]byte, 1024)
 		for {
@@ -83,7 +79,6 @@ func handleWebSocket(w http.ResponseWriter, r *http.Request) {
 		}
 	}()
 
-	// Read from WebSocket and write to PTY
 	for {
 		_, message, err := ws.ReadMessage()
 		if err != nil {

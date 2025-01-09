@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://mock-service:5002" });
+const API = axios.create({ baseURL: "http://localhost:5002" });
 
 API.interceptors.response.use(
   (response) => response.data,
@@ -16,7 +16,7 @@ export const likePost = (id, updatedPost) => API.put(`/posts/${id}`, updatedPost
 export const addComment = (postId, comment) =>
   API.put(`/posts/${postId}`, { comment });
 
-const API_URL = 'http://mock-service:5002/api';
+const API_URL = 'http://localhost:5002/api';
 
 export const fetchContainers = async () => {
   const response = await axios.get(`${API_URL}/containers`);

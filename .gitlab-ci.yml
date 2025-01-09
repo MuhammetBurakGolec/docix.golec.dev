@@ -6,7 +6,7 @@ stages:
 
 variables:
   IMAGE_TAG: "latest"
-  DOCKER_IMAGE_PREFIX: "muhammetburakgolec"
+  DOCKER_IMAGE_PREFIX: "$DOCKER_HUB_USERNAME"
 
 semgrep_scan:
   stage: security_scan

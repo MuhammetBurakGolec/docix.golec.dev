@@ -100,5 +100,17 @@
         "content": "<p>Prometheus, zaman serisi verilerini toplamak ve sorgulamak için kullanılan açık kaynaklı bir sistem izleme ve alarm aracıdır. Prometheus kurulumu için şu adımları izleyebilirsiniz:</p><ul><li><strong>İhtiyaçların Kontrolü:</strong> Prometheus, çoğu Linux dağıtımında çalışabilir ve Docker ile de kullanılabilir.</li><li><strong>Yazılımın İndirilmesi:</strong> Prometheus'u resmi web sitesinden indirip uygun dizine yerleştirin.</li><li><strong>Kurulumun Başlatılması:</strong> Prometheus'u başlatın ve yapılandırma dosyasını düzenleyin.</li><li><strong>Yapılandırma:</strong> Prometheus yapılandırma dosyasına hedef sistemleri ekleyin ve izleme işlemlerine başlayın.</li><li><strong>Kurulumun Tamamlanması:</strong> Kurulum tamamlandığında, Prometheus üzerinden metrikleri izlemeye başlayabilirsiniz.</li></ul>"
       }
     ]
+  },
+  {
+    "id": 8,
+    "title": "Docix Exporter",
+    "subsections": [
+      {
+        "id": 8,
+        "title": "Docix Exporter Kurulumu",
+        "slug": "docix-exporter",
+        "content": "<p>Docix Exporter, Prometheus ile entegrasyon sağlamak amacıyla kullanılan bir araçtır. Docix Exporter sayesinde sisteminizdeki metrikleri kolayca toplayabilir ve Prometheus tarafından izleyebilirsiniz. Aşağıda Docix Exporter'ın kurulumu için izleyebileceğiniz adımlar detaylı olarak açıklanmıştır:</p><ul><li><strong>Gereksinimlerin Kontrolü:</strong> Docix Exporter'ı kullanmak için Docker veya doğrudan sistem üzerinde çalıştırabilirsiniz. Python 3.7 veya üzeri bir sürüm gereklidir.</li><li><strong>Yazılımın İndirilmesi:</strong> Docix Exporter'ı resmi GitHub deposundan indirip uygun dizine yerleştirin. <a href=\"https://github.com/example/docix-exporter\">Docix Exporter GitHub</a></li><li><strong>Kurulumun Başlatılması:</strong> Terminal veya komut satırını açarak aşağıdaki komutu kullanın: <pre><code>docker run -d -p 9100:9100 docix/exporter:latest</code></pre> Veya doğrudan sistem üzerinde çalıştırmak için:<pre><code>python3 docix_exporter.py</code></pre></li><li><strong>Yapılandırma:</strong> Docix Exporter'ın yapılandırma dosyasını (`exporter.yml`) düzenleyin. Bu dosyada Prometheus sunucusunun adresini ve izlemek istediğiniz metrikleri tanımlayın. Örnek yapılandırma:<pre><code>prometheus:url: \"http://localhost:9090\"metrics:- cpu_usage- memory_usage- disk_io</code></pre></li><li><strong>Prometheus Konfigürasyonunun Güncellenmesi:</strong> Prometheus yapılandırma dosyasına Docix Exporter'ı hedef olarak ekleyin. `prometheus.yml` dosyasına aşağıdaki satırları ekleyin:<pre><code>scrape_configs:- job_name: 'docix_exporter'static_configs:- targets: ['localhost:9100']</code></pre></li><li><strong>Prometheus'un Yeniden Başlatılması:</strong> Yapılandırma değişikliklerinin geçerli olması için Prometheus'u yeniden başlatın:<pre><code>sudo systemctl restart prometheus</code></pre></li><li><strong>İzleme İşlemlerine Başlama:</strong> Kurulum tamamlandığında, Prometheus web arayüzüne giderek Docix Exporter tarafından sağlanan metrikleri izlemeye başlayabilirsiniz. Ayrıca, Grafana gibi araçlarla görselleştirmeler oluşturabilirsiniz.</li></ul>"
+      }
+    ] 
   }
 ]
