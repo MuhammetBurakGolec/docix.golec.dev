@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./Login.css";
 
 const Login = ({ onLogin }) => {
@@ -7,21 +8,48 @@ const Login = ({ onLogin }) => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Burada gerçek API çağrısı yapılacak
-    // Şimdilik mock login işlemi yapıyoruz
-    if (email && password) {
-      // Login başarılı olduğunda
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
       onLogin(true);
-      navigate('/'); // Ana sayfaya yönlendir
+      navigate('/');
+    }
+  }, [navigate, onLogin]);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      if (!email || !password) {
+        toast.error('Email ve şifre zorunludur');
+        return;
+      }
+
+      const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!isValidEmail) {
+        toast.error('Geçerli bir email adresi giriniz');
+        return;
+      }
+
+      // Mock credentials check
+      if (email === 'admin@admin.com' && password === 'admin') {
+        const mockToken = 'mock-jwt-token';
+        localStorage.setItem('token', mockToken);
+        onLogin(true);
+        toast.success('Giriş başarılı');
+        navigate('/');
+      } else {
+        toast.error('Geçersiz kullanıcı bilgileri');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      toast.error('Giriş başarısız. Lütfen tekrar deneyiniz.');
     }
   };
 
   return (
     <div className="auth-container">
       <h2>Giriş Yap</h2>
-      <form onSubmit={handleSubmit} className="auth-form">
+      <form onSubmit={handleLogin} className="auth-form">
         <input
           type="email"
           placeholder="Email"
