@@ -14,32 +14,32 @@ semgrep_scan:
   script:
     - semgrep --config "p/security-audit" .
 
-docker_build_and_push_mock_service:
-  image: docker:20.10.16
-  services:
-  - docker:20.10.16-dind
-  stage: build-mock_service
-  script:
-    - docker login -u "$DOCKER_HUB_USERNAME" -p "$DOCKER_HUB_PASSWORD"
-    - docker build -t $DOCKER_IMAGE_PREFIX/mock-service:$IMAGE_TAG -f ./microservices/mockdata-api/Dockerfile .
-    - docker push $DOCKER_IMAGE_PREFIX/mock-service:$IMAGE_TAG
+# docker_build_and_push_mock_service:
+#   image: docker:20.10.16
+#   services:
+#   - docker:20.10.16-dind
+#   stage: build-mock_service
+#   script:
+#     - docker login -u "$DOCKER_HUB_USERNAME" -p "$DOCKER_HUB_PASSWORD"
+#     - docker build -t $DOCKER_IMAGE_PREFIX/mock-service:$IMAGE_TAG -f ./microservices/mockdata-api/Dockerfile .
+#     - docker push $DOCKER_IMAGE_PREFIX/mock-service:$IMAGE_TAG
 
-docker_build_and_push_ssh_service:
-  image: docker:20.10.16
-  services:
-  - docker:20.10.16-dind
-  stage: build-ssh_service
-  script:
-    - docker login -u "$DOCKER_HUB_USERNAME" -p "$DOCKER_HUB_PASSWORD"
-    - docker build -t $DOCKER_IMAGE_PREFIX/ssh-service:$IMAGE_TAG -f ./microservices/ssh-services/Dockerfile .
-    - docker push $DOCKER_IMAGE_PREFIX/ssh-service:$IMAGE_TAG
+# docker_build_and_push_ssh_service:
+#   image: docker:20.10.16
+#   services:
+#   - docker:20.10.16-dind
+#   stage: build-ssh_service
+#   script:
+#     - docker login -u "$DOCKER_HUB_USERNAME" -p "$DOCKER_HUB_PASSWORD"
+#     - docker build -t $DOCKER_IMAGE_PREFIX/ssh-service:$IMAGE_TAG -f ./microservices/ssh-services/Dockerfile .
+#     - docker push $DOCKER_IMAGE_PREFIX/ssh-service:$IMAGE_TAG
 
-docker_build_and_push_frontend_service:
-  image: docker:20.10.16
-  services:
-  - docker:20.10.16-dind
-  stage: build-frontend_service
-  script:
-    - docker login -u "$DOCKER_HUB_USERNAME" -p "$DOCKER_HUB_PASSWORD"
-    - docker build -t $DOCKER_IMAGE_PREFIX/frontend-service:$IMAGE_TAG -f ./frontend/Dockerfile .
-    - docker push $DOCKER_IMAGE_PREFIX/frontend-service:$IMAGE_TAG
+# docker_build_and_push_frontend_service:
+#   image: docker:20.10.16
+#   services:
+#   - docker:20.10.16-dind
+#   stage: build-frontend_service
+#   script:
+#     - docker login -u "$DOCKER_HUB_USERNAME" -p "$DOCKER_HUB_PASSWORD"
+#     - docker build -t $DOCKER_IMAGE_PREFIX/frontend-service:$IMAGE_TAG -f ./frontend/Dockerfile .
+#     - docker push $DOCKER_IMAGE_PREFIX/frontend-service:$IMAGE_TAG
